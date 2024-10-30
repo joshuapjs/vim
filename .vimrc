@@ -19,7 +19,7 @@ Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'ocaml/vim-ocaml'
 Plug 'rhysd/vim-clang-format'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim' - I am a Solarized person now.
 Plug 'sheerun/vim-polyglot'
 
 " Disable Automatic VimTex Error Window
@@ -28,4 +28,8 @@ let g:vimtex_quickfix_mode = 0
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-colorscheme onedark
+autocmd BufNewFile,BufRead *.tex set filetype=tex
+
+" Colorscheme downloaded from GitHub and stored in .vim/colors
+let g:solarized_termcolors=256
+colorscheme solarized
