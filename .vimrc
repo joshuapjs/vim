@@ -1,6 +1,7 @@
-" General mostly vizual settings
-set t_Co=256
+" General mostly visual settings
 syntax enable
+"set t_Co=256 -- Enable if your terminal is shit.
+set background=light
 set cursorline
 set number
 set expandtab
@@ -19,7 +20,6 @@ Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'ocaml/vim-ocaml'
 Plug 'rhysd/vim-clang-format'
-" Plug 'joshdick/onedark.vim' - I am a Solarized person now.
 Plug 'sheerun/vim-polyglot'
 
 " Disable Automatic VimTex Error Window
@@ -30,6 +30,20 @@ call plug#end()
 
 autocmd BufNewFile,BufRead *.tex set filetype=tex
 
+" Fixing bug where files opened with Vim remain in the history.
+if &term =~ "ansi"
+    let &t_ti = "\<Esc>[?47h"
+    let &t_te = "\<Esc>[?47l"
+endif
+
+" following systems dark/light mode
+if has('gui_running')
+            set background=light
+                else
+                            set background=dark
+                                endif
+
 " Colorscheme downloaded from GitHub and stored in .vim/colors
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256 -- Enable if your terminal is shit.
 colorscheme solarized
+
