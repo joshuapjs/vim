@@ -37,11 +37,11 @@ if &term =~ "ansi"
 endif
 
 " following systems dark/light mode
-if has('gui_running')
-            set background=light
-                else
-                            set background=dark
-                                endif
+if strftime("%H") < 16 && strftime("%H") > 6
+  set background=light
+else
+  set background=dark
+endif
 
 " Colorscheme downloaded from GitHub and stored in .vim/colors
 " let g:solarized_termcolors=256 -- Enable if your terminal is shit.
