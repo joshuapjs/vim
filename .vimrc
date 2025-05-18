@@ -1,6 +1,6 @@
-" General mostly visual settings
 syntax enable
-"set t_Co=256 -- Enable if your terminal is shit.
+"If the line below is needed, uncomment line 47 && comment out 48.
+"set t_Co=256
 set background=light
 set cursorline
 set number
@@ -37,13 +37,13 @@ if &term =~ "ansi"
 endif
 
 " following systems dark/light mode
-if strftime("%H") < 16 && strftime("%H") > 6
+if strftime("%H") < 21 && strftime("%H") > 5
   set background=light
 else
   set background=dark
 endif
 
 " Colorscheme downloaded from GitHub and stored in .vim/colors
-" let g:solarized_termcolors=256 -- Enable if your terminal is shit.
+" let g:solarized_termcolors=256 - see line 2 for more information.
 colorscheme solarized
 
