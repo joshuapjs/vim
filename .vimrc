@@ -5,22 +5,26 @@ set background=light
 set cursorline
 set number
 set expandtab
-set tabstop=4
+" Careful with the setting below: Makefiles require tabs (!)
+"set tabstop=4
 set shiftwidth=4
 set autoindent
 set showmatch
 set incsearch
 set hlsearch
 
+set termguicolors
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'lervag/vimtex'
 Plug 'ocaml/vim-ocaml'
 Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
+Plug 'lifepillar/vim-solarized8'
 
 " Disable Automatic VimTex Error Window
 let g:vimtex_quickfix_mode = 0
@@ -37,13 +41,12 @@ if &term =~ "ansi"
 endif
 
 " following systems dark/light mode
-if strftime("%H") < 21 && strftime("%H") > 5
-  set background=light
-else
-  set background=dark
-endif
+"if strftime("%H") <= 21 && strftime("%H") >= 5
+"  set background=light
+"else
+"  set background=dark
+"endif
 
-" Colorscheme downloaded from GitHub and stored in .vim/colors
-" let g:solarized_termcolors=256 - see line 2 for more information.
-colorscheme solarized
+"let g:solarized_termcolors=256 "see line 2 for more information.
+colorscheme solarized8
 
