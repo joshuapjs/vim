@@ -1,0 +1,25 @@
+" sparse vimrc version
+" ------------------
+
+syntax enable
+set background=light
+set cursorline
+set number
+set expandtab
+set shiftwidth=4
+set autoindent
+set showmatch
+set incsearch
+set hlsearch
+colorscheme industry
+
+set termguicolors
+let g:vimtex_quickfix_mode = 0
+autocmd BufNewFile,BufRead *.tex set filetype=tex
+
+" Fixing bug where files opened with Vim remain in the history.
+if &term =~ "ansi"
+    let &t_ti = "\<Esc>[?47h"
+    let &t_te = "\<Esc>[?47l"
+endif
+

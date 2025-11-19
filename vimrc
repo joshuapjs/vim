@@ -1,5 +1,5 @@
 syntax enable
-"If the line below is needed, uncomment line 47 && comment out 48.
+"If the line below is needed, uncomment line 50 && comment out 51.
 "set t_Co=256
 set background=light
 set cursorline
@@ -18,15 +18,15 @@ set termguicolors
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
-" Declare the list of plugins.
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'scrooloose/nerdtree' " open/close with :NERDTree
 Plug 'lervag/vimtex'
-Plug 'ocaml/vim-ocaml'
-Plug 'rhysd/vim-clang-format'
+Plug 'rhysd/vim-clang-format' " select code > :ClangFormat
 Plug 'sheerun/vim-polyglot'
 Plug 'lifepillar/vim-solarized8'
 
 " Disable Automatic VimTex Error Window
+" The window can be toggled manually with :copen and :cclose.
 let g:vimtex_quickfix_mode = 0
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -49,4 +49,3 @@ endif
 
 "let g:solarized_termcolors=256 "see line 2 for more information.
 colorscheme solarized8
-
